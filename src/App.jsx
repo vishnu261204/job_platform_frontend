@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { Analytics } from '@vercel/analytics/react';
 import { ToastProvider } from './utils/toast.jsx';
 import ErrorBoundary from './components/ErrorBoundary';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -52,6 +53,7 @@ function App() {
             <AppContent />
           </ErrorBoundary>
         </ToastProvider>
+        <Analytics />
       </AuthProvider>
     </HelmetProvider>
   );
